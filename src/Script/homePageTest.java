@@ -19,6 +19,6 @@ public class homePageTest extends testBase {
 	@Test
 	public void signupUser() {
 		HmObj.signUpUser();
-		HmObj.signUpUser();
+
 	}
 }
