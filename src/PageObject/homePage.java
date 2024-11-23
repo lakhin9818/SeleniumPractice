@@ -1,5 +1,7 @@
 package PageObject;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,7 +29,8 @@ public class homePage extends testBase {
 
 	public String signUpUser() {
 		String msg;
-		Wait(30);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitForElementToBeClickable(LoginButton);
 		msg = click(LoginButton, "Clicking Signup/login button");
 		return msg;
 	}

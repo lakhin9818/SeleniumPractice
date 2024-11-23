@@ -1,10 +1,10 @@
 package TestBase;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeTest;
 
 public class testBase {
 	public static WebDriver driver;
-//	homePage objhomePage;
 
 	@BeforeTest
 	public static WebDriver setup() {
@@ -29,10 +28,9 @@ public class testBase {
 		return msg;
 	}
 
-	public void Wait(int timeinSeconds) {
-		driver.manage().timeouts().implicitlyWait(timeinSeconds, TimeUnit.SECONDS);
-//		WebDriverWait wait = new WebDriverWait(driver, 30);
-
+	public void waitForElementToBeClickable(WebElement ele) {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
 
 	@AfterTest
