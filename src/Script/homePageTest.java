@@ -6,7 +6,7 @@ import PageObject.homePage;
 import TestBase.testBase;
 
 public class homePageTest extends testBase {
-	homePage HmObj = new homePage();
+	homePage HmObj = new homePage(driver);
 
 //Scripting Only here
 	@Test
